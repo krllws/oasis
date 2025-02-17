@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги - Ветеринарная клиника</title>
+    <style>
+        /* Общие стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            scroll-behavior: smooth;
+        }
+
+        /* Шапка */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #95BBEE;
+            padding: 10px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo img {
+            width: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .search input {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Основной контент */
+        .content {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .service {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .service img {
+            width: 350px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .service-text {
+            flex: 1;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .service-text.left {
+            padding-left: 40px; /* Отступ слева для текста */
+        }
+
+        .service-text.right {
+            padding-right: 40px; /* Отступ справа для текста */
+        }
+
+        .service-text:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px; /* Толщина полоски */
+            height: 100%;
+            background-color: #95BBEE; /* Цвет полоски */
+        }
+
+        .service-text.right:before {
+            left: auto;
+            right: 0;
+        }
+
+        .service h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 24px; /* Увеличиваем размер заголовка */
+            font-weight: bold;
+        }
+
+        .service-text p {
+            font-size: 16px; /* Размер текста */
+            color: #666; /* Цвет текста */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Логотип">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/about">О нас</a></li>
+                <li><a href="/services">Услуги</a></li>
+                <li><a href="/help_1">Поддержка</a></li>
+                <li><a href="/we">Наша команда</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="🔍 Что вас интересует?">
+        </div>
+    </header>
+
+    <!-- Контент -->
+    <div class="content">
+        <div class="service">
+            <div class="service-text left">
+                <h2>Терапия</h2>
+                <p>Услуга врача-терапевта — это ключ к здоровью вашего питомца. Мы не просто лечим болезни, а обеспечиваем комплексный подход к уходу за животным: от диагностики до профилактики. Наши специалисты помогут выявить скрытые заболевания на ранних стадиях, подберут индивидуальное лечение и дадут ценные рекомендации для поддержания здоровья вашего пушистого друга. Забота о питомце начинается с профессиональной помощи — доверьтесь нам, и мы обеспечим вашему животному долгую и счастливую жизнь!.</p>
+            </div><img src="{{ url_for('static', filename='images/kot.jpg') }}" alt="Терапия">
+        </div>
+
+        <div class="service">
+            <img src="{{ url_for('static', filename='images/doggg.jpg') }}" alt="Хирургия">
+            <div class="service-text right">
+                <h2>Хирургия</h2>
+                <p>Наша клиника предлагает высококачественные хирургические услуги для животных, включая как плановые операции, так и неотложные вмешательства. Мы используем передовое оборудование и минимально инвазивные методы для снижения травм и ускорения восстановительного процесса. Команда опытных хирургов внимательно следит за состоянием питомца до, во время и после операции, обеспечивая максимальную безопасность и комфорт на каждом этапе лечения.</p>
+            </div>
+        </div>
+
+        <div class="service">
+            <div class="service-text left">
+                <h2>Медицинская карта</h2>
+                <p>Медицинская карта — это подробный документ, в котором фиксируются все диагностические исследования, назначенные процедуры и лечение вашего питомца. Ведя такую карту, мы можем отслеживать состояние здоровья животного на протяжении времени и оперативно реагировать на изменения, обеспечивая правильную профилактику и лечение.</p>
+            </div>
+            <img src="{{ url_for('static', filename='images/medcard.jpg') }}" alt="Медицинская карта">
+        </div>
+
+        <div class="service">
+            <img src="{{ url_for('static', filename='images/lab3.jpg') }}" alt="Лаборатория">
+            <div class="service-text right">
+                <h2>Лаборатория</h2>
+                <p>Наша лаборатория оснащена современным оборудованием для проведения различных анализов, включая анализы крови, мочи, кала и другие. Мы выполняем быстрые и точные исследования, чтобы получить подробную информацию о состоянии здоровья вашего питомца и своевременно назначить необходимое лечение.</p>
+            </div>
+        </div>
+
+        <div class="service">
+            <div class="service-text left">
+                <h2>Стационар</h2>
+                <p>Наш стационар предлагает комфортные условия для животных, которым необходим круглосуточный уход и наблюдение. Мы обеспечиваем лечение, реабилитацию и уход за животными в условиях, максимально приближенных к домашним. Врачебный персонал следит за состоянием здоровья питомцев, чтобы обеспечить эффективное восстановление.</p>
+            </div>
+            <img src="{{ url_for('static', filename='images/dog6.png') }}" alt="Стационар">
+        </div>
+
+        <div class="service">
+            <img src="{{ url_for('static', filename='images/dog7.jpg') }}" alt="Вакцинация">
+            <div class="service-text right">
+                <h2>Вакцинация</h2>
+                <p>Вакцинация — это основа профилактики многих инфекционных заболеваний. Мы проводим вакцинацию животных, обеспечивая их защиту от самых распространенных заболеваний. Прививки помогают вашему питомцу избежать опасных заболеваний и сохранять здоровье на протяжении всей жизни.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

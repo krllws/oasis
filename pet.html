@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список животных</title>
+</head>
+<body>
+    <h1>Список животных</h1>
+    <ul>
+        {% for pet in pets %}
+        <li>
+            <strong>{{ pet_name }}</strong> ({{ pet_age }} года/лет)
+            Порода: {{ pet_breed or "Не указана" }}, Владелец: {{ pet_owner or "Не указан" }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ветеринарная клиника</title>
+    <style>
+        /* Общие стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        /* Верхнее меню */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #95BBEE; /* Голубой цвет */
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            width: 50px; /* Размер логотипа */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .search input {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Полоска под меню */
+        .header-strip {
+            width: 100%;
+            height: 400px;
+            background: url("{{ url_for('static', filename='images/header-strip.png') }}") no-repeat center;
+            background-size: cover;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Главный баннер */
+        .main-banner {
+            background-image: url("{{ url_for('static', filename='images/background.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            padding: 40px 0; /* Изменено, чтобы сохранить пространство для текста */
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-banner h1 {
+            font-size: 30px; /* Увеличиваем размер шрифта */
+            margin-top: -420px; /* Поднимаем текст, чтобы он был выше */
+            z-index: 3; /* Убедитесь, что текст находится поверх фона */
+        }
+
+        h1 {
+            font-size: 22px; /* Увеличиваем размер шрифта заголовка */
+            margin-top: 0; /* Убираем верхний отступ */
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #87BFFF;
+            color: white;
+            padding: 12px 25px; /* Увеличиваем размеры кнопок */
+            margin: 15px 10px; /* Увеличиваем расстояние между кнопками */
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 20px; /* Увеличиваем размер шрифта */
+            position: relative;
+            top: -30px; /* Поднимаем кнопки */
+        }
+
+
+        /* Позиционирование кота, собаки и ветеринара */
+        .vet-img, .pet1-img, .pet2-img {
+            position: absolute;
+            z-index: 3;
+        }
+
+        .vet-img {
+            left: 1%; /* Сдвигаем ветеринара влево */
+            top: -60%;
+            transform: translateY(-50%);
+        }
+
+        .pet1-img {
+            right: 12%; /* Сдвигаем собаку вправо */
+            top: -50%;
+            transform: translateY(-50%);
+        }
+
+        .pet2-img {
+            right: 0%; /* Сдвигаем кота чуть правее собаки */
+            top: -40%;
+            transform: translateY(-50%);
+        }
+
+        /* Лапки по краям */
+        .paw-img {
+            width: 50px;
+            height: auto;
+            position: fixed;
+            top: 85%;
+            transform: translateY(-50%);
+        }
+
+        .paw-left {
+            left: 10px;
+        }
+
+        .paw-right {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Верхнее меню -->
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Логотип">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/about">О нас</a></li>
+                <li><a href="/services">Услуги</a></li>
+                <li><a href="/help_1">Поддержка</a></li>
+                <li><a href="/we">Наша команда</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="🔍 Что вас интересует?">
+        </div>
+    </header><!-- Полоска под меню -->
+    <div class="header-strip"></div>
+
+    <!-- Лапки по краям экрана -->
+    <img src="{{ url_for('static', filename='images/paw.png') }}" alt="След лапы" class="paw-img paw-left">
+    <img src="{{ url_for('static', filename='images/paw.png') }}" alt="След лапы" class="paw-img paw-right">
+
+    <!-- Главный баннер -->
+    <section class="main-banner">
+        <h1>Здоровье вашего питомца в надёжных руках!</h1>
+        <img src="{{ url_for('static', filename='images/vet.png') }}" alt="Ветеринар" class="vet-img" width="330">
+        <img src="{{ url_for('static', filename='images/pet1.png') }}" alt="Собака" class="pet1-img" width="300">
+        <img src="{{ url_for('static', filename='images/pet2.png') }}" alt="Кот" class="pet2-img" width="280">
+        <br>
+        <a href="#" class="button">Записаться на приём</a>
+        <a href="#" class="button">Посмотреть услуги</a>
+    </section>
+
+    <!-- Часто задаваемые вопросы -->
+    <section class="faq">
+        <h2>Частые вопросы</h2>
+    </section>
+</body>
+</html>
