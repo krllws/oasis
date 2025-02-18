@@ -63,6 +63,14 @@
             background-size: cover;
         }
 
+        /* Главный баннер */
+        .main-banner {
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            position: relative;
+            padding: 100px 20px;
+        }
 
         /* Заголовок */
         .main-banner h1 {
@@ -217,6 +225,15 @@
             height: 400px;
             object-fit: contain;
         }
+
+        .rabbit-img {
+            align-self: flex-start; /* Если он сместился вниз */
+            margin-left: auto; /* Можно подвинуть влево или вправо */
+            margin-right: auto;
+            width: 400px; /* Должен быть такой же, как у остальных */
+            height: 400px;
+            object-fit: contain;
+        }
         .card-back {
             display: flex;
             flex-direction: column;
@@ -367,7 +384,7 @@
         <div class="service-card">
             <div class="service-inner">
                 <div class="service-front">
-                        <img scr="https://krllws.github.io/oasis/static/images/parrot.png" alt="Медкарта">
+                    <img scr="https://krllws.github.io/oasis/static/images/parrot.png" alt="Медкарта">
                 </div>
                 <div class="service-back">
                     <div class="card-back">
