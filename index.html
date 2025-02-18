@@ -92,10 +92,8 @@
         }
 
         /* Изображения */
-        .vet-img, .pet1-img, .pet2-img, .paw-img{
-            width: 150px;
+        .vet-img, .pet1-img, .pet2-img, .paw-img {
             position: absolute;
-            top: 10px;
         }
 
         .vet-img {
@@ -103,15 +101,15 @@
             bottom: -57px;
             width: 200px;
             position: absolute;
-            top:20px;
+            top: 20px;
         }
 
         .pet1-img {
             right: 13%;
             bottom: -70px;
             width: 200px;
-            position:absolute;
-            top:90px
+            position: absolute;
+            top: 90px;
         }
 
         .pet2-img {
@@ -150,9 +148,9 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 80px; /* Увеличил расстояние между картинками */
-            max-width: 1400px; /* Ограничение ширины */
-            margin: 0 auto; /* Центрирование */
+            gap: 80px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .service-card {
@@ -160,28 +158,29 @@
             height: 400px;
             perspective: 1000px;
             display: flex;
-            justify-content: center; /* Центрируем карточку */
+            justify-content: center;
             align-items: center;
         }
 
-        .service-inner {width: 100%;
+        .service-inner {
+            width: 100%;
             height: 100%;
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.8s ease-in-out;
-            transform-origin: center; /* Центр вращения */
-            }
+            transform-origin: center;
+        }
 
         .service-front, .service-back {
             position: absolute;
             width: 100%;
             height: 100%;
-            backface-visibility: hidden; /* Скрываем заднюю сторону */
-            border-radius: 20px; /* Закругляем */
+            backface-visibility: hidden;
+            border-radius: 10px;
         }
 
         .service-back {
-            transform: rotateY(180deg); /* Поворачиваем заднюю сторону */
+            transform: rotateY(180deg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -193,9 +192,8 @@
         }
 
         .service-card:hover .service-inner {
-            transform: rotateY(180deg); /* При наведении — поворот */
+            transform: rotateY(180deg);
         }
-
 
         .service-front, .service-back {
             width: 100%;
@@ -223,43 +221,44 @@
             text-align: center;
             font-weight: bold;
             padding: 20px;
-            border-radius: 70px; /* Закругление углов */
+            border-radius: 70px;
         }
 
         .pictures-container img {
-            width: 400px; /* Увеличил размер картинок */
+            width: 400px;
             height: 400px;
             object-fit: contain;
         }
 
         .rabbit-img {
-            align-self: flex-start; /* Если он сместился вниз */
-            margin-left: auto; /* Можно подвинуть влево или вправо */
+            align-self: flex-start;
+            margin-left: auto;
             margin-right: auto;
-            width: 400px; /* Должен быть такой же, как у остальных */
+            width: 400px;
             height: 400px;
             object-fit: contain;
         }
+
         .card-back {
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Размещает контент по вертикали */
+            justify-content: space-between;
             height: 80%;
             padding: 20px;
         }
 
         .more-btn {
             display: block;
-            width: 60%; /* Чтобы кнопка растянулась */
+            width: 60%;
             text-align: center;
             padding: 10px 20px;
             background-color: #CCEFFF;
-            color:#FFFFFF;
+            color: #FFFFFF;
             text-decoration: none;
             border-radius: 10px;
             font-weight: bold;
             transition: background-color 0.3s;
-            margin-top: auto; /* Прижимает кнопку вниз */
+            margin-top: auto;
         }
 
         .more-btn:hover {
@@ -274,7 +273,6 @@
             justify-content: space-between;
             gap: 10px;
         }
-
 
         .faq-item {
             flex: calc(50% - 10px);
@@ -292,15 +290,15 @@
             justify-content: space-between;
             align-items: center;
             font-weight: bold;
-            background-color: #c4ebff; /* Голубая заливка */
+            background-color: #c4ebff;
             padding: 10px;
             border-radius: 5px;
-            color: black; /* Белый текст для контраста */
+            color: black;
         }
+
         .faq-arrow {
             font-size: 20px;
             transition: transform 0.3s;
-            isplay: inline-block;
         }
 
         .faq-answer {
@@ -308,12 +306,10 @@
             padding-top: 10px;
         }
 
-
-        #faq h2{
+        #faq h2 {
             text-align: center;
             margin: 0 0 20px 0;
             width: 100%;
-
         }
     </style>
 </head>
@@ -357,173 +353,112 @@
 
     <!-- Блок с услугами -->
     <section id="services">
-    <h2>Услуги нашей ветклиники</h2>
-    <div class="pictures-container">
-        <div class="service-card">
-            <div class="service-inner">
-                <div class="service-front">
-                    <img src="https://krllws.github.io/oasis/static/images/pet5.png" alt="Стационар">
-                </div>
-                <div class="service-back">
-                    <div class="card-back">
-                    <p>• Стационар – круглосуточный уход за питомцами, требующими лечения и наблюдения. Комфортные условия и забота ветеринаров помогут вашему любимцу быстрее выздороветь.</p>
-                    <a href="/about" class="more-btn">Подробнее</a>
+        <h2>Услуги нашей ветклиники</h2>
+        <div class="pictures-container">
+            <div class="service-card">
+                <div class="service-inner">
+                    <div class="service-front">
+                        <img src="https://krllws.github.io/oasis/static/images/pet5.png" alt="Стационар">
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <div class="service-inner">
-                <div class="service-front">
-                    <img src="https://krllws.github.io/oasis/static/images/cat1.png" alt="Хирургия">
-                </div>
-                <div class="service-back">
-                    <div class="card-back">
-                    <p> • Хирургия – проведение плановых и экстренных операций с использованием современного оборудования и безопасной анестезии. Мы заботимся о здоровье вашего питомца на каждом этапе.</p>
-                    <a href="/about" class="more-btn">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <div class="service-inner">
-                <div class="service-front">
-                    <img src="https://krllws.github.io/oasis/static/images/parrot.png" alt="Медкарта">
-                </div>
-                <div class="service-back">
-                    <div class="card-back">
-                    <p style="font-size: 22px;"> •Ведение истории болезней, анализов и прививок в едином электронном формате. Позволяет отслеживать состояние питомца и получать рекомендации от ветеринара.</p>
-                    <a href="/about" class="more-btn">Подробнее</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        <div class="service-card">
-            <div class="service-inner">
-                <div class="service-front">
-                    <img src="https://krllws.github.io/oasis/static/images/lab.png" alt="Лаборатория">
-                </div>
-                <div class="service-back">
-                    <div class="card-back">
-                    <p>• Лаборатория – быстрая и точная диагностика заболеваний с помощью анализов крови, биохимии и других исследований. Позволяет своевременно выявлять проблемы и назначать лечение.</p>
-                    <a href="/about" class="more-btn">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <div class="service-inner">
-                <div class="service-front">
-                    <img src="https://krllws.github.io/oasis/static/images/cat2.png" alt="Терапия">
-                </div>
-                <div class="service-back">
-                    <div class="card-back">
-                    <p> • Терапия – консультации, диагностика и лечение заболеваний внутренних органов. Комплексный подход к здоровью питомца с учетом его возраста и особенностей.</p>
-                    <a href="/about" class="more-btn">Подробнее</a>
+                    <div class="service-back">
+                        <div class="card-back">
+                            <p>• Стационар – круглосуточный уход за питомцами, требующими лечения и наблюдения. Комфортные условия и забота ветеринаров помогут вашему любимцу быстрее выздороветь.</p>
+                            <a href="/about" class="more-btn">Подробнее</a>
                         </div>
+                    </div>
+                </div>
+            </div             <div class="service-card">
+                <div class="service-inner">
+                    <div class="service-front">
+                        <img src="https://krllws.github.io/oasis/static/images/pet6.png" alt="Консультация">
+                    </div>
+                    <div class="service-back">
+                        <div class="card-back">
+                            <p>• Консультация – персонализированные рекомендации по уходу за вашим питомцем, лечению заболеваний, профилактике и многое другое.</p>
+                            <a href="/about" class="more-btn">Подробнее</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="service-card">
-            <div class="service-inner">
-                <div class="service-front">
-                    <img src="https://krllws.github.io/oasis/static/images/pet3.png" alt="Вакцинация">
+            <div class="service-card">
+                <div class="service-inner">
+                    <div class="service-front">
+                        <img src="https://krllws.github.io/oasis/static/images/pet7.png" alt="Хирургия">
+                    </div>
+                    <div class="service-back">
+                        <div class="card-back">
+                            <p>• Хирургия – наши опытные хирурги помогут вашему питомцу с любой хирургической операцией, обеспечив высококачественное медицинское обслуживание.</p>
+                            <a href="/about" class="more-btn">Подробнее</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-back">
-                    <div class="card-back">
-                    <p>• Вакцинация – защита от опасных инфекций и вирусов. Индивидуальный график прививок поможет сохранить здоровье вашего питомца и предотвратить серьезные болезни.</p>
-                    <a href="/about" class="more-btn">Подробнее</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-inner">
+                    <div class="service-front">
+                        <img src="https://krllws.github.io/oasis/static/images/pet8.png" alt="Вакцинация">
+                    </div>
+                    <div class="service-back">
+                        <div class="card-back">
+                            <p>• Вакцинация – защита от опасных заболеваний. Мы поможем вашему питомцу пройти вакцинацию с минимальным стрессом.</p>
+                            <a href="/about" class="more-btn">Подробнее</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-     <section id="faq">
-    <h2>Частые вопросы</h2>
-
-
-    <div class="faq-item">
-        <div class="faq-question">
-            <span>Какие прививки нужны моему питомцу и когда их делать?</span>
-            <span class="faq-arrow">ᐯ</span>
+    <!-- Часто задаваемые вопросы -->
+    <section id="faq">
+        <h2>Часто задаваемые вопросы</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Как записаться на приём?</span>
+                <span class="faq-arrow">➤</span>
+            </div>
+            <div class="faq-answer">
+                <p>Вы можете записаться на приём через наш сайт или позвонив по телефону. Мы всегда рады помочь!</p>
+            </div>
         </div>
-        <div class="faq-answer">• Прививки зависят от вида животного и возраста. Для собак и кошек обязательны вакцинации от бешенства, чумы и вирусных заболеваний. График вакцинации лучше обсудить с ветеринаром.</div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question">
-            <span>Как подготовить животное к операции или стерилизации?.</span>
-            <span class="faq-arrow">ᐯ</span>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Какой график работы?</span>
+                <span class="faq-arrow">➤</span>
+            </div>
+            <div class="faq-answer">
+                <p>Наша клиника работает круглосуточно, без выходных и праздников.</p>
+            </div>
         </div>
-        <div class="faq-answer">• Перед операцией питомцу не дают еду за 8-12 часов, обеспечивают покой и исключают стресс. Ветеринар заранее расскажет об особенностях подготовки.</div>
-    </div>
-
-         <div class="faq-item">
-        <div class="faq-question">
-            <span>Почему мой питомец отказывается от еды и что делать?</span>
-            <span class="faq-arrow">ᐯ</span>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Какие услуги предоставляет ваша клиника?</span>
+                <span class="faq-arrow">➤</span>
+            </div>
+            <div class="faq-answer">
+                <p>Мы предоставляем широкий спектр услуг, включая консультации, лечение, вакцинацию и хирургические операции.</p>
+            </div>
         </div>
-        <div class="faq-answer">• Причин может быть много: от стресса и смены корма до заболеваний. Если отказ от еды длится более суток или сопровождается вялостью, обратитесь к врачу.</div>
-    </div>
+    </section>
 
-         <div class="faq-item">
-        <div class="faq-question">
-            <span>Когда нужно проводить профилактическое обследование у ветеринара?</span>
-            <span class="faq-arrow">ᐯ</span>
-        </div>
-        <div class="faq-answer">• Раз в год для здоровых животных и чаще при хронических заболеваниях или в пожилом возрасте.</div>
-    </div>
-
-         <div class="faq-item">
-        <div class="faq-question">
-            <span>Как подготовить животное к операции или стерилизации?</span>
-            <span class="faq-arrow">ᐯ</span>
-        </div>
-        <div class="faq-answer">• Чистить зубы специальной пастой, проверять уши на загрязнения и чистить их по мере необходимости, а купать и расчесывать шерсть в зависимости от породы.</div>
-    </div>
-
-         <div class="faq-item">
-        <div class="faq-question">
-            <span>Как подготовить животное к операции или стерилизации?</span>
-            <span class="faq-arrow">ᐯ</span>
-        </div>
-        <div class="faq-answer">• Чистить зубы специальной пастой, проверять уши на загрязнения и чистить их по мере необходимости, а купать и расчесывать шерсть в зависимости от породы.</div>
-    </div>
-
-
-         <div class="faq-item">
-        <div class="faq-question">
-            <span>Как подготовить животное к операции или стерилизации?</span>
-            <span class="faq-arrow">ᐯ</span>
-        </div>
-        <div class="faq-answer">• Чистить зубы специальной пастой, проверять уши на загрязнения и чистить их по мере необходимости, а купать и расчесывать шерсть в зависимости от породы.</div>
-    </div>
-
-
-</section>
-
-<script>
-    document.querySelectorAll('.faq-item').forEach(item => {
-        item.addEventListener('click', function() {
-            let answer = this.querySelector('.faq-answer');
-            let arrow = this.querySelector('.faq-arrow');
-
-            if (answer.style.display === "block") {
-                answer.style.display = "none";
-                arrow.textContent = "ᐯ";  // Стрелка вниз
-            } else {
-                answer.style.display = "block";
-                arrow.textContent = "ᐱ";  // Стрелка вверх
-            }
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.querySelector('.faq-answer');
+                const arrow = item.querySelector('.faq-arrow');
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    answer.style.display = 'block';
+                    arrow.style.transform = 'rotate(90deg)';
+                }
+            });
         });
-    });
-</script>
+    </script>
+
 </body>
 </html>
